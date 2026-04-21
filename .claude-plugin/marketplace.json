@@ -1,0 +1,10 @@
+{
+  "name": "colick-marketplace",
+  "version": "1.0.0",
+  "description": "Colick's Claude Code plugin marketplace",
+  "plugins": {
+    "colick-tools": {
+      "path": "plugins/colick-tools"
+    }
+  }
+}
