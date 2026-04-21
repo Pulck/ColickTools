@@ -24,6 +24,31 @@ skills/<skill-name>/
 
 新增 skill 时应遵循此结构。`SKILL.md` 必须保持精简，不重复展开细节。
 
+### SKILL.md 格式规范
+
+**Frontmatter（必须）：**
+```yaml
+---
+name: <skill-name>
+description: <第三人称描述，用于自然语言触发匹配。说明适用场景和触发关键词>
+---
+```
+
+- `description` 使用**第三人称**（如 "Should be used when..."），这是官方推荐格式
+- 支持中英双语触发词，可扩大匹配面
+- **正文使用祈使句/无主语**，避免 "AI"、"你"、"我" 作为主语
+  - 正确："不得基于推断声称未验证的事实"
+  - 错误："AI 不得基于推断声称未验证的事实"
+
+**篇幅控制：**
+- `SKILL.md` 控制在 **1500-2000 字符**
+- 超出部分移到 `references/` 或 `examples/`
+- 渐进式披露：SKILL.md（核心规范）→ references/（速查表与详解）→ examples/（实战示例）
+
+**Skill 定位：**
+- 全局行为准则（如 honest-execution）：description 明确"适用于所有任务"
+- 特定场景触发（如 dispatching-parallel-subagents）：description 说明具体触发条件
+
 ## 所有 Skill 的通用设计哲学
 
 以下原则适用于本项目中**所有 skill** 的设计，新增 skill 时必须遵循：
