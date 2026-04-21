@@ -10,7 +10,7 @@
   "plugins": [
     {
       "name": "colick-tools",
-      "source": "plugins/colick-tools",
+      "source": "./plugins/colick-tools",
       "description": "Parallel subagent dispatch framework and honest execution standards",
       "version": "0.1.0",
       "author": {
