@@ -3,7 +3,21 @@
     "allow": [
       "Bash(git init *)",
       "Bash(git add *)",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "Bash(git remote *)",
+      "Bash(git branch *)",
+      "Bash(git push *)",
+      "Bash(ssh-add *)",
+      "Bash(ssh *)",
+      "WebSearch",
+      "Bash(awk '{if\\(NF==0\\)print \".\"; else print $0}')",
+      "WebFetch(domain:docs.anthropic.com)",
+      "Skill(plugin-dev:create-plugin)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:zenn.dev)",
+      "Bash(python3 -m json.tool)",
+      "Bash(git commit *)",
+      "Read(//Users/colick/**)"
     ]
   }
 }
