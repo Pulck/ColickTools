@@ -1,6 +1,6 @@
 ---
 name: dispatching-parallel-subagents
-description: 主代理判定任务可拆分后，提供并行派遣子代理的执行标准与规范框架
+description: This skill should be used when the user asks to "并行派遣子代理", "dispatch parallel subagents", "拆分任务给多个子代理", or "让多个子代理同时工作". It provides execution standards and safety framework after the main agent has decided a task is splittable.
 ---
 
 # 并行派遣子代理

@@ -1,0 +1,8 @@
+{
+  "name": "colick-tools",
+  "version": "1.0.0",
+  "description": "Claude Code plugin providing execution standards and safety framework for dispatching parallel subagents",
+  "repository": "https://github.com/Pulck/ColickTools",
+  "license": "MIT",
+  "keywords": ["claude-code", "subagents", "parallel", "dispatch", "agent"]
+}
