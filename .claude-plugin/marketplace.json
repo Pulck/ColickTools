@@ -1,10 +1,39 @@
 {
   "name": "colick-marketplace",
-  "version": "1.0.0",
-  "description": "Colick's Claude Code plugin marketplace",
-  "plugins": {
-    "colick-tools": {
-      "path": "plugins/colick-tools"
+  "owner": {
+    "name": "Colick",
+    "email": ""
+  },
+  "metadata": {
+    "description": "Colick's Claude Code plugins — parallel subagent dispatch and honest execution standards"
+  },
+  "plugins": [
+    {
+      "name": "colick-tools",
+      "source": "plugins/colick-tools",
+      "description": "Parallel subagent dispatch framework and honest execution standards",
+      "version": "0.1.0",
+      "author": {
+        "name": "Colick",
+        "email": ""
+      },
+      "repository": "https://github.com/Pulck/ColickTools",
+      "license": "MIT",
+      "keywords": [
+        "claude-code",
+        "subagents",
+        "parallel",
+        "dispatch",
+        "agent",
+        "honest-execution"
+      ],
+      "category": "workflow",
+      "tags": [
+        "subagents",
+        "parallel",
+        "execution-standards"
+      ],
+      "strict": false
     }
-  }
+  ]
 }
