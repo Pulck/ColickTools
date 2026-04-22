@@ -28,6 +28,20 @@
 
 触发关键词："诚实执行"、"不要偷工减料"、"实事求是"、"验证不要偷懒"等。
 
+## Commands
+
+### /fill-survey
+
+填写 AI 自评问卷，回顾会话执行过程并输出到指定文件夹。
+
+```bash
+/fill-survey ./my-surveys
+```
+
+- 基于问卷模板诚实自评
+- 自动对敏感信息进行脱敏处理
+- 输出文件：`ai-self-assessment-{日期}.md`
+
 ## 让 honest-execution 日常生效
 
 honest-execution 默认仅在用户显式提及相关关键词时触发。如需在日常编码任务中自动生效，将以下内容追加到你项目的 `CLAUDE.md`（或全局 `~/.claude/CLAUDE.md`）：

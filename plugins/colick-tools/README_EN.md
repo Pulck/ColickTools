@@ -36,6 +36,20 @@ claude --plugin-dir /path/to/this/repo
 
 Or add to your Claude Code plugins directory for automatic loading.
 
+## Commands
+
+### /fill-survey
+
+Fill out the AI self-assessment survey, reviewing the session execution and outputting to a specified folder.
+
+```bash
+/fill-survey ./my-surveys
+```
+
+- Honest self-assessment based on the survey template
+- Automatic desensitization of sensitive information
+- Output file: `ai-self-assessment-{date}.md`
+
 ## Making honest-execution Always-On
 
 By default, honest-execution only triggers when the user explicitly mentions related keywords. To make it effective during everyday coding tasks, append the following to your project's `CLAUDE.md` (or global `~/.claude/CLAUDE.md`):

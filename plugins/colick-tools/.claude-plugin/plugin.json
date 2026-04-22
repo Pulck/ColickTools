@@ -19,5 +19,8 @@
   ],
   "skills": [
     "./skills/"
+  ],
+  "commands": [
+    "./commands/"
   ]
 }
