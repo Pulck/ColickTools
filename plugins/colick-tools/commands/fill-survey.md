@@ -2,6 +2,7 @@
 description: 填写 colick-tools AI 自评问卷，输出到指定文件夹
 argument-hint: [folder-path]
 allowed-tools: Read, Write, Bash(ls:*)
+model: sonnet
 ---
 
 ## 任务
@@ -26,7 +27,7 @@ allowed-tools: Read, Write, Bash(ls:*)
 
 | 敏感信息类型 | 脱敏方式 | 示例 |
 |------------|---------|------|
-| **项目名称** | 保留平台/类型，去除命名 | "Origins macOS 视频播放器" → "某 macOS 客户端项目" |
+| **项目名称** | 保留平台/类型，去除命名 | "MyApp macOS 视频播放器" → "某 macOS 客户端项目" |
 | **公司/组织名** | 替换为"某团队"或删除 | "XX科技" → 删除 |
 | **业务函数名** | 保留技术模式，泛化业务命名 | `func handlePlayback(_ url: URL)` → "某播放控制函数（接收 URL 参数）" |
 | **业务类名** | 保留类型语义，泛化命名 | `TypeHelper` → "某类型辅助类" |
@@ -35,6 +36,7 @@ allowed-tools: Read, Write, Bash(ls:*)
 | **API 密钥 / Token / 凭证** | 替换为 `[REDACTED]` | `sk-abc123...` → `[REDACTED]` |
 | **业务数据库表名/字段** | 保留数据类型，泛化业务命名 | `user_payment_records` → "某交易记录表" |
 | **内部域名 / 内网地址** | 保留服务类型，泛化命名 | `api.internal.corp.com` → "内部 API 网关" |
+| **任务描述中的具体功能名** | 保留功能类型，泛化命名 | "创建 /fill-survey command" → "某插件 command 开发"；"接入支付宝支付" → "某支付功能接入" |
 
 #### 需要保留的信息（对 skill 迭代有价值）
 
@@ -57,7 +59,7 @@ allowed-tools: Read, Write, Bash(ls:*)
 > 在某项目中，某函数有风险，我做了推断。
 
 **脱敏不足（泄露隐私）：**
-> 在 Origins 项目中，`TypeHelper.swift` 第 47 行的 `processPointers` 函数使用了 `withUnsafeMutableRawPointers`。
+> 在 MyApp 项目中，`TypeHelper.swift` 第 47 行的 `processPointers` 函数使用了 `withUnsafeMutableRawPointers`。
 
 #### 脱敏检查清单
 
@@ -68,6 +70,7 @@ allowed-tools: Read, Write, Bash(ls:*)
 - [ ] 所有绝对路径已移除或相对化
 - [ ] 所有错误日志只保留了类型和框架信息
 - [ ] 所有凭证类信息已标记为 `[REDACTED]`
+- [ ] 任务描述中的具体功能名已泛化（保留功能类型）
 
 同时确认以下内容**已保留**：
 - [ ] 编程语言和平台类型已保留
@@ -95,6 +98,8 @@ allowed-tools: Read, Write, Bash(ls:*)
 date +%Y-%m-%d
 ```
 
+确认 `$1` 不为空。如果用户未提供路径，询问用户保存位置。
+
 使用 Bash 工具确认目标文件夹存在（如果不存在则创建）：
 
 ```bash
@@ -109,4 +114,14 @@ mkdir -p $1
 - 文件保存路径（完整路径）
 - 文件大小（行数）
 - 本次会话中发现的 1-2 个最值得关注的 skill 生效/未生效的点
-- 提醒用户检查文件内容是否满意，是否需要修改
+
+**隐私脱敏检查（请用户确认）：**
+
+AI 在填写时可能对熟悉的内容"视而不见"，请用户帮忙检查以下常见遗漏：
+- [ ] 项目名称是否已泛化（非"MyCompanyApp"而是"某 iOS 客户端"）
+- [ ] 业务功能名是否已泛化（非"新增会员积分系统"而是"某用户激励功能"）
+- [ ] 人名/团队名是否已删除或替换
+- [ ] 内部系统/服务名是否已泛化
+- [ ] 截图中的敏感信息是否已处理（如有截图附件）
+
+**请用户确认**："以上内容是否已脱敏？是否可以安全分享？" 如果用户发现遗漏，立即修正并重新保存。
