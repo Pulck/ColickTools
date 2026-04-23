@@ -1,7 +1,7 @@
 {
   "name": "colick-tools",
-  "version": "0.1.5",
-  "description": "Claude Code plugin providing execution standards and safety framework for dispatching parallel subagents",
+  "version": "0.1.6",
+  "description": "Claude Code plugin providing honest execution standards and safety framework for dispatching parallel subagents",
   "author": {
     "name": "Colick",
     "url": "https://github.com/Pulck"
