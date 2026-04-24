@@ -19,7 +19,6 @@ description: This skill should be used when the user asks to "并行派遣子代
 **本 Skill 的职责：**
 - 提供拆分后的执行规范（prompt 结构、返回格式、聚合策略）
 - 明确准入条件和禁止事项
-- 提供常见错误的反面示例
 
 ## 准入条件
 
@@ -77,6 +76,3 @@ description: This skill should be used when the user asks to "并行派遣子代
 ## 更多信息
 
 - `references/prompt-templates.md` — 可直接使用的 Prompt 模板
-- `references/quick-reference.md` — 快速参考表与验收清单
-- `references/failure-handling.md` — 失败处理与常见错误详解
-- `examples/real-example.md` — 完整实战示例

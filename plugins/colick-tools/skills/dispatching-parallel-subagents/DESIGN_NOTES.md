@@ -20,11 +20,12 @@
 - 返回应当无歧义
 - 子代理应自治
 
-### 5. 官方结构建议
-采用渐进式披露（Progressive Disclosure）：
-- 精简的 SKILL.md（核心内容）
-- references/ 目录存放详细参考
-- examples/ 目录存放示例
+### 5. 文件结构原则
+
+- SKILL.md：只保留 AI 可直接执行的硬性约束
+- DESIGN_NOTES.md：设计结论备忘（人类读）
+- references/：仅保留无需判断的直接可用材料（如 Prompt 模板）
+- 反面示例、速查表、验收清单已从 skill 中删除——增加 AI 的对照判断负担，解决不了上下文压缩和能力限制的客观问题
 
 ### 6. 用词规范
 - 核心原则："不得""不应"
@@ -45,12 +46,8 @@
 dispatching-parallel-subagents/
 ├── SKILL.md                    # 精简版核心规范
 ├── DESIGN_NOTES.md             # 本文件，设计结论备忘
-├── references/
-│   ├── prompt-templates.md     # 可直接使用的模板
-│   ├── quick-reference.md      # 快速参考表与验收清单
-│   └── failure-handling.md     # 失败处理与常见错误详解
-└── examples/
-    └── real-example.md         # 完整实战示例
+└── references/
+    └── prompt-templates.md     # 可直接使用的模板
 ```
 
 ## 版本状态
